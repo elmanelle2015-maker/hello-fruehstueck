@@ -30,7 +30,7 @@
     .nav {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3rem 1.5rem; /* Höhe verdoppelt */
+  padding: 1.5rem 1.5rem; /* Höhe verdoppelt */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,15 +39,15 @@
     .logo {
   display: flex;
   align-items: center; /* richtet Logo + Text vertikal sauber aus */
-  gap: 1rem;        /* etwas größerer Abstand */
+  gap: 0.75rem;        /* etwas größerer Abstand */
   font-weight: 800;
-  font-size: 2rem;  /* etwas größer als vorher */
+  font-size: 1.45rem;  /* etwas größer als vorher */
   letter-spacing: 0.03em;
 }
 
 
 .logo-image {
-  height: 120px; /* oder 70px – je nach Geschmack */
+  height: 60px; /* oder 70px – je nach Geschmack */
   width: auto;
   display: block;
 }
@@ -349,10 +349,13 @@
 </head>
 <body>
   <header>
-<header>
-  <div class="brand">
-    <img src="HelloF_Logo_V1.png" alt="Hello Frühstück Logo" class="logo" />
-
+    <div class="nav">
+      <div class="logo">
+  <img
+    src="img/HelloF_Logo_V1.png"
+    alt="Hello Frühstück Logo"
+    class="logo-image"
+  />
   <span>Hello <span class="logo-highlight">Frühstück</span></span>
    </div>
 
@@ -554,5 +557,3 @@
   </script>
 </body>
 </html>
-
-
