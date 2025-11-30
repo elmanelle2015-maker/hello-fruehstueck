@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello Frühstück – Frühstücksboxen für Kinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hello Frühstück – bunte, gesunde Frühstücksboxen für Kinder. Klein, bunt und voller Power." />
+
+  <!-- Schrift -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Neue Farbpalette – passend zum Logo */
+      --orange: #E06C2A;
+      --orange-dark: #C35A1C;
+      --orange-light: #FFE2C4;
+      --orange-bg: #FFF5EB;
+--box-bg: #FFF8F1;   /* deine neue helle Beige-Farbe */
+
+
+      --green: #7CAF50;
+      --green-dark: #4F8B37;
+
+      --brown: #3A2F2A;
+      --text-grey: #6A6A6A;
+      --card-border: #F3D0AA;
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Baloo 2", system-ui, sans-serif;
+      background: var(--orange-bg);
+      color: var(--brown);
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* HEADER / HERO */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.5rem 1.25rem;
+      border-radius: 1.5rem;
+      background: var(--orange-light);
+      box-shadow: 0 16px 26px rgba(0, 0, 0, 0.12);
+    }
+
+    header .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header img.logo {
+      width: 120px;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      color: var(--orange);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    header p.slogan {
+      font-size: 1.1rem;
+      color: var(--brown);
+    }
+
+    .hero-text {
+      max-width: 480px;
+    }
+
+    .cta-group {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: #fff;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 11px 20px rgba(0,0,0,0.24);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 2px solid var(--orange);
+      color: var(--orange);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(224,108,42,0.06);
+    }
+.product-card ul {
+  padding-left: 1.2rem;
+  list-style-position: inside;
+}
+section:first-of-type {
+  margin-top: 2rem; /* oder 2.5rem, falls du es höher willst */
+}
+/* KONTAKT-BEREICH */
+
+.contact-section {
+ background: var(--box-bg);
+  border-radius: 1.5rem;
+  padding: 2rem 2.5rem;
+  margin: 1.5rem 0 2rem;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+  border: 1px solid var(--card-border);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-section h2 {
+  font-size: 1.8rem;
+  color: var(--orange-dark);
+  margin-bottom: 0.5rem;
+}
+
+.contact-intro {
+  color: var(--text-grey);
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.contact-form label span {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 0.35rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  padding: 0.85rem 1rem;
+  background: #fffaf4;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form textarea {
+  border-radius: 1.25rem;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(224,108,42,0.15);
+}
+
+/* Button wie die anderen CTAs, aber über volle Breite */
+.btn-contact {
+  margin-top: 0.5rem;
+  width: 100%;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--green), var(--green-dark));
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 11px 20px rgba(0,0,0,0.22);
+}
+
+    /* SECTIONS */
+    section {
+      background: var(--orange-light);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+      border: 1px solid var(--card-border);
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+      color: var(--orange-dark);
+    }
+
+    /* PRODUKTKARTEN */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+ 
+
+    .product-card {
+      background: var(--box-bg);
+      border-radius: 1.25rem;
+      padding: 1rem;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+      transition: 0.15s ease;
+      position: relative;
+    }
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 26px rgba(0,0,0,0.12);
+    }
+
+    .product-tag {
+      background: rgba(124,175,80,0.18);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      color: var(--green-dark);
+    }
+
+    .product-title { font-size: 1.1rem; margin: 0.2rem 0; }
+    .price { font-weight: 700; color: var(--green-dark); }
+    .age { font-size: 0.8rem; color: var(--text-grey); }
+
+    /* VORTEILE */
+    .benefit-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .benefit {
+      background: var(--box-bg);
+      border-radius: 1.25rem;
+      padding: 0.9rem;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    }
+
+    .benefit strong { color: var(--orange-dark); }
+
+    /* FAQ */
+    .faq-item + .faq-item {margin-top: 0.75rem; }
+    .faq-q { font-weight: 600; margin-bottom: 0.25rem; }
+    .faq-a { font-size: 0.9rem; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-grey);
+      padding-bottom: 1rem;
+    }
+
+    footer a {
+      color: var(--green-dark);
+      text-decoration: none;
+    }
+    /* FAQ + Kontakt nebeneinander */
+    .contact-layout {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      margin-top: 1.5rem;
+    }
+
+    .contact-layout section {
+      flex: 1;
+    }
+
+    /* Auf Handy wieder untereinander */
+    @media (max-width: 900px) {
+      .contact-layout {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <div class="brand">
+        <img src="img/HelloF_Logo.png" alt="Hello Frühstück Logo" class="logo">
+        <div>
+          <h1>Hello Frühstück</h1>
+          <p class="slogan">Superkräfte zum Mitnehmen</p>
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <p>
+          Wir packen frische, ausgewogene Frühstücksboxen für Kinder – liebevoll, nährstoffreich und alltagstauglich. So starten Kinder energievoll in den Tag und Eltern gewinnen Zeit.
+        </p>
+
+        <div class="cta-group">
+          <a href="#produkte" class="btn-primary">Frühstücksbox wählen</a>
+          <a href="#infos" class="btn-ghost">Für Eltern erklärt</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+<!-- INFOS -->
+      <section id="infos">
+        <h2>Warum Hello Frühstück?</h2>
+
+        <div class="benefit-list">
+          <div class="benefit">
+            <strong>Ernährungsbewusst</strong><br>
+            Vollkorn, Obst, Gemüse & wenig Zucker.
+          </div>
+<div class="benefit">
+            <strong>Gesund & lecker</strong><br>
+            Abgestimmt auf Kinderbedürfnisse.
+          </div>
+
+          <div class="benefit">
+            <strong>Einfach bestellt</strong><br>
+            Box wählen, Lieferdatum festlegen, fertig.
+          </div>
+
+          <div class="benefit">
+            <strong>Fair & flexibel</strong><br>
+            Einzelne Bestellungen oder flexible Abos.
+          </div>
+      </section>
+
+      <!-- PRODUKTE -->
+      <section id="produkte">
+        <h2>Unsere Frühstücksboxen</h2>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <span class="product-tag">Vegan</span>
+            <h3 class="product-title">Sunny Start Box</h3>
+            <p class="product-desc">Vollkornbrot-Sandwich, Apfelspalten, Trauben, Gurkensticks & ein kleiner Power-Keks.</p>
+            <ul class="product-desc">
+              <li>ohne zugesetzten Zucker</li>
+              <li>reich an Ballaststoffen</li>
+            </ul>
+            <div class="product-meta">
+              <span class="price">0,00 €</span>
+            
+            </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-tag">Extra bunt</span>
+            <h3 class="product-title">Rainbow Snack Box</h3>
+            <p class="product-desc">Obstspieße, Mini-Wrap, Blaubeeren & Käsewürfel-Mix.</p>
+            <ul class="product-desc">
+              <li>5 verschiedene Obstsorten</li>
+              <li>perfekt für lange Vormittage</li>
+            </ul>
+            <div class="product-meta">
+              <span class="price">0,00 €</span>
+                          </div>
+          </article>
+
+          <article class="product-card">
+            <span class="product-tag">Ohne Nüsse</span>
+            <h3 class="product-title">School Hero Box</h3>
+            <p class="product-desc">Gemüsesticks mit Dip, Dinkelstangen, Banane & Blaubeeren – nussfrei.</p>
+            <ul class="product-desc">
+              <li>ideal für Schule & Hort</li>
+              <li>nussfrei & kitatauglich*</li>
+            </ul>
+            <div class="product-meta">
+              <span class="price">0,00 €</span>
+                          </div>
+          </article>
+        </div>
+      </section>
+
+      
+      <!-- KONZEPT --> 
+      <section id="konzept"> 
+        <h2>Wie funktioniert Hello Frühstück?</h2>
+        <p class="lead">
+         Ihr möchtet ein ausgewogenes und kreatives Schulfrühstück, das ihr nur noch in den Schulranzen packen müsst ?
+        </p>
+
+        <div class="benefit-list">
+          <div class="benefit">
+            <strong>Hello Frühstück passt zu eurem Stundenplan</strong><br>
+           Wählt wöchentlich neu, an welchen Tagen ihr unsere Boxen mitnehmen möchtet.  
+          </div>
+          <div class="benefit">
+            <strong>Hello Frühstück ist für alle Kinder</strong><br>
+          Wählt einfach die Anzahl der Boxen – wir kümmern uns um den Rest.
+          </div>
+          <div class="benefit">
+            <strong>Hello Frühstück weiß, was Kindern schmeckt</strong><br>
+           Entscheidet euch für eines unserer   Angebote oder stellt eure individuelle Box zusammen.
+          </div>
+          <div class="benefit">
+            <strong>Ihr könnt länger schlafen</strong> <br>
+            Wir beliefern euch immer am Vorabend, so fällt der Stress am Morgen weg.
+          </div>
+        </div>
+      </section>
+
+<div class="contact-layout">
+      <!-- FAQ (NEU EINGESETZT) -->
+       <section id="faq">
+        <h2>Häufige Fragen</h2>
+
+        <div class="faq-item">
+          <p class="faq-q">Wie läuft die Bestellung ab?</p>
+          <p class="faq-a">
+            Du wählst online eure Wunschtage, die Anzahl der Boxen und gibst Besonderheiten wie Allergien an.
+            Anschließend bestätigst du die Bestellung – wir kümmern uns um den Rest.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Wann werden die Boxen geliefert?</p>
+          <p class="faq-a">
+            Wir liefern am Vorabend in einem festen Zeitfenster. So kannst du die Box über Nacht kühl stellen
+            und musst sie morgens nur noch einpacken – ganz ohne Stress.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Muss ich ein Abo abschließen?</p>
+          <p class="faq-a">
+            Nein. Du entscheidest selbst, an welchen Tagen ihr Boxen bekommt. Einzelne Tage oder wiederkehrende
+            Bestellungen – alles flexibel.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Berücksichtigt ihr Allergien und Unverträglichkeiten?</p>
+          <p class="faq-a">
+            Ja. Du kannst Allergien (z. B. Nüsse, Laktose, Gluten) angeben. Wir passen Zutaten an und kennzeichnen
+            alles klar. Bitte beachte auch die Vorgaben deiner Kita oder Schule.
+           </p>
+ <div class="faq-item">
+          <p class="faq-q">Gibt es vegetarische oder vegane Boxen?</p>
+          <p class="faq-a">
+            Viele Boxen sind vegetarisch. Vegane Anpassungen sind ebenfalls möglich und können beim Bestellen
+            ausgewählt werden.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Für welches Alter sind die Boxen geeignet?</p>
+          <p class="faq-a">
+            Unsere Boxen sind ab etwa 3 Jahren geeignet und werden für ältere Kinder entsprechend angepasst.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Sind die Verpackungen nachhaltig?</p>
+          <p class="faq-a">
+            Ja. Unsere Verpackungen sind lebensmittelsicher, umweltfreundlich und lassen sich gut recyceln
+            oder mehrfach nutzen.
+          </p>
+        </div>
+      </section>
+
+
+    </main>
+
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <p class="contact-intro">
+    Du möchtest bestellen, mit uns für deine Schule zusammenarbeiten oder hast Fragen zu Hello Frühstück?
+    Schreib uns – wir melden uns so schnell wie möglich.
+  </p>
+
+  <form class="contact-form">
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" placeholder="Dein Name">
+    </label>
+
+    <label>
+      <span>E-Mail</span>
+      <input type="email" name="email" placeholder="dein.name@example.com">
+    </label>
+
+    <label>
+      <span>Nachricht</span>
+      <textarea name="message" rows="5" placeholder="Wobei dürfen wir dir helfen?"></textarea>
+    </label>
+
+    <button type="submit" class="btn-contact">Nachricht senden</button>
+  </form>
+</section>
+</div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">Impressum</a> ·
+      <a href="#">Datenschutz</a>
+    </div>
+    <div style="margin-top:0.4rem;">
+      © <span id="year"></span> Hello Frühstück — Superkräfte zum Mitnehmen
+    </div>
+  </footer>
+
